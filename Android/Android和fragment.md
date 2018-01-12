@@ -1,6 +1,6 @@
-#Activity及Fragemnt 生命周期及源码分析
+# Activity及Fragemnt 生命周期及源码分析
 
-##官方定义
+## 官方定义
 - fragment是依赖activity 的，不能单独存在的
 - 一个activity 里面可以有多个fragment
 - 一个fragement可以被多个activity重用
