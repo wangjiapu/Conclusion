@@ -7,6 +7,7 @@
 - fragment 有自己的生命周期
 1. 说道fragment的生命周期就不得不说activity的生命周期了
 
+
 生命周期|Activity  |  Fragment                   
  -------------------|----------------|--------------|
 onCreate | 当activity第一次创建的时候调用，通过setContentView去加载布局，当然，也可以通过bundle参数来恢复异常情况下的activity的状态|在onCreate之前会有onAttach方法，是用来将fragment与activity绑定的，不过当我们调用动态加载fragment的时候就会发现，onAttach,oncreate,OnCreateView(创建视图),OnActivityCreate依次被调用，这样才相当与Activity的onCreate方法|
