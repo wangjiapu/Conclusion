@@ -6,10 +6,11 @@
 - 一个fragement可以被多个activity重用
 - fragment 有自己的生命周期
 1. 说道fragment的生命周期就不得不说activity的生命周期了
-|生命周期|Activity                |                     Fragment                   
-| -------------------| :----------------:|--------------:|
-|onCreate|当activity第一次创建的时候调用，通过setContentView去加载布局，当然，也可以通过bundle参数来恢复异常情况下的activity的状态|在onCreate之前会有onAttach方法，是用来将fragment与activity绑定的，不过当我们调用动态加载fragment的时候就会发现，onAttach,oncreate,OnCreateView(创建视图),OnActivityCreate依次被调用，这样才相当与Activity的onCreate方法|
-|onStart|activity正在启动，acticity 已经开始了不过他还在后台，意味着我们不能与之交互|因为调用了activity的onstart方法，所以也调用了fragment的方法，fragment 中的控件也是无法与用户（因为，fragment是依附与activity的）|
+
+生命周期|Activity  |  Fragment                   
+ -------------------|----------------|--------------|
+onCreate | 当activity第一次创建的时候调用，通过setContentView去加载布局，当然，也可以通过bundle参数来恢复异常情况下的activity的状态|在onCreate之前会有onAttach方法，是用来将fragment与activity绑定的，不过当我们调用动态加载fragment的时候就会发现，onAttach,oncreate,OnCreateView(创建视图),OnActivityCreate依次被调用，这样才相当与Activity的onCreate方法|
+onStart|activity正在启动，acticity 已经开始了不过他还在后台，意味着我们不能与之交互|因为调用了activity的onstart方法，所以也调用了fragment的方法，fragment 中的控件也是无法与用户（因为，fragment是依附与activity的）
 |onResume|可见，获取到焦点，处于活动状态|同理|
 |onPause|activity正在停止，失去焦点，仍可见正常情况：调用onstop，极端情况：调用onResume,回到Activity，（有一次在onPause中开启一个Activity 然后finsh，导致应用直接挂到后台）|同理|
 |onstop|失去焦点，位于后台，可以做一些稍微繁重的回收工作，同样不能太耗时||
