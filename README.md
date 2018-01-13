@@ -4,4 +4,4 @@
  
 - [Android](https://github.com/wangjiapu/Conclusion/blob/master/Android/AAAA.md)
 
-- [数据结构](https://github.com/wangjiapu/Conclusion/blob/master/Android/AAAA.md)
+- [数据结构](https://github.com/wangjiapu/Conclusion/blob/master/数据结构/AAA.md)
