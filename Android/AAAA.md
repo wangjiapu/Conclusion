@@ -5,4 +5,4 @@
 - [Activity和Fragment](https://github.com/wangjiapu/Conclusion/blob/master/Android/Android和fragment.md)
 - [服务与防止服务被杀死](https://github.com/wangjiapu/Conclusion/blob/master/Android/Android和fragment.md)
 - [Android 线程](https://github.com/wangjiapu/Conclusion/blob/master/Android/android%20%E7%BA%BF%E7%A8%8B.md)
-- [序列化]()
+- [序列化](https://github.com/wangjiapu/Conclusion/blob/master/Android/%E5%BA%8F%E5%88%97%E5%8C%96.md)
