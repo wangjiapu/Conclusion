@@ -13,4 +13,4 @@
 - 如果数据量大于千数量级，直接使用hasnMap
 
 
-ArrayMap基本和SparseArray是一样的，只不过key可以是其他类型。
+[ArrayMap]()基本和SparseArray是一样的，只不过key可以是其他类型。
