@@ -13,4 +13,4 @@
 - 如果数据量大于千数量级，直接使用hasnMap
 
 
-[ArrayMap]()基本和SparseArray是一样的，只不过key可以是其他类型。
+[ArrayMap](https://github.com/wangjiapu/Conclusion/blob/master/Java%E5%9F%BA%E7%A1%80/ArrayMap.md)基本和SparseArray是一样的，只不过key可以是其他类型。
