@@ -1,0 +1,23 @@
+
+
+surfaceView 他是表层本身；
+
+在创建SurfaceView 的时候要实现SurfaceView.Callback接口　监听SurfaceView的状态
+View 是通过invalidate方法通知系统调用View.OnDraw方法进行重绘
+android是通过VSYNC信号来通知进行屏幕重绘的
+
+
+SurfaceFlinger与WindowManagerService　关系
+
+在每一个ａｃｔｉｖｉｔｙ组件中，都关联着一个Surface对象，这个对象不存在一个关联ViewRoot对象的成员变量mSurface中
+
+
+ 一个应用程序窗口分别位于应用程序进程和WindowManagerService服务中的两个Surface对象有什么区别呢？
+ 虽然它们都是用来操作位于SurfaceFlinger服务中的同一个Layer对象的，不过，它们的操作方式却不一样。
+ 具体来说，就是位于应用程序进程这一侧的Surface对象负责绘制应用程序窗口的UI，即往应用程序窗口的图形缓冲区填充UI数据，
+ 而位于WindowManagerService服务这一侧的Surface对象负责设置应用程序窗口的属性，例如位置、大小等属性。
+ 这两种不同的操作方式分别是通过C++层的Surface对象和SurfaceControl对象来完成的，
+ 因此，位于应用程序进程和WindowManagerService服务中的两个Surface对象的用法是有区别的。
+ 之所以会有这样的区别，是因为绘制应用程序窗口是独立的，由应用程序进程来完即可，而设置应用程序窗口的属性却需要全局考虑，
+ 即需要由WindowManagerService服务来统筹安排，
+ 例如，一个应用程序窗口的Z轴坐标大小要考虑它到的窗口类型以及它与系统中的其它窗口的关系。
