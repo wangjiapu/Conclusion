@@ -1,0 +1,4 @@
+
+
+startActivityForResult是当一个a活动启动b活动的时候b活动在销毁的时候需要返回一些数据给ａ活动的时候时候使用．
+但是当不管在a b启动模式是singleTask　或者是singleInstance时候还有到requestCode小于０的时候就会失效；

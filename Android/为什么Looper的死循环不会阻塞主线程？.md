@@ -1,0 +1,7 @@
+
+looper　为什么要卡死？首先我们知道ActivtyThread不是一个线程，他就是一个简单final类而已，意思就是如果他执行完了，
+那么我们的应用程序也就结束了．但是我们当然是不希望我们的应用程序点开就挂掉把，
+所以这里android在ActicityThread开始的的main方法中就直接初始化了一个binder和looper，
+我们也知知道android 堆界面的操作都是在主线程中，也是借助一个叫handler的东西，尽管这个handler可能不是我们实现的，
+但是ＡctivityThreadz中有一个内部类Ｈ,他是继承handler的类，我们所有的事件都是通过这个来实现的，
+k
