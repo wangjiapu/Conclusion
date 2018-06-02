@@ -13,3 +13,6 @@
 - [为什么Looper的死循环不会阻塞主线程？](https://github.com/wangjiapu/Conclusion/blob/master/Android/%E4%B8%BA%E4%BB%80%E4%B9%88Looper%E7%9A%84%E6%AD%BB%E5%BE%AA%E7%8E%AF%E4%B8%8D%E4%BC%9A%E9%98%BB%E5%A1%9E%E4%B8%BB%E7%BA%BF%E7%A8%8B%EF%BC%9F.md)
 - [startActivityForresult失效](https://github.com/wangjiapu/Conclusion/blob/master/Android/startActivityForresult%E5%A4%B1%E6%95%88.md)
 - [广播](https://github.com/wangjiapu/Conclusion/blob/master/Android/%E5%B9%BF%E6%92%AD.md)
+- [dp和sp的区别]()
+- [finish调用后其他生命周期调用情况]()
+- [contentprovider](https://www.jianshu.com/p/ea8bc4aaf057)

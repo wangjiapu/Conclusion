@@ -1,0 +1,12 @@
+
+
+
+activity生命周期在结束的时候会判断他的现有的状态，如果是在onCreate中回调的，那么就没有直接回调onDestory，
+之所以有生命周期，我的理解就是有利于组件让我们可以在不同的生命周期中做一些数据或者初始化等等的操作，
+但是OnCreate是生命周期的第一个调用方法，如果在这个时候调动finish那么我们本就没有在onStart，
+onResume中处理什么东西，同理就不用在onpuse，onStop中回收一些东西那么就直接回调onDestory方法
+
+
+同理：在ｏｎＳｔａｒｔ中finnish那么就会调用onStop
+
+在onResume中回调，那么就会走晚剩下的几个方法．
