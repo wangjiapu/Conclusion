@@ -1,0 +1,38 @@
+
+
+
+
+## Mutlidex原理：
+
+Mutlidex是一种就解决android 低版本中的dex文件方法数量限制的一种技术，在低版本中dex文件只能从在65535个方法，但是如果项目过大就没有办法完成
+这个应用的加载，那么就出现了官方补丁->  Mutlidex
+
+要想说dex文件的解决方案那么就知道dex文件的是通过使用classLoader来加载的，
+
+Android上面的classloader加载是通过dexClassLoader和pathClassLoader来加载的。
+
+dexClassloader和pathClassLoader的加载原理是一样的，只是使用场景不一样
+
+DexClassLoader：能够加载未安装的jar/apk/dex
+PathClassLoader：只能加载系统中已经安装过的apk
+主要原因就是 ：d中有个optimizedDirectory内部存储路径，而p中没有
+
+
+
+这两个classloader都是继承自BaseDexClassLoader，在BaseDexClassLoader构造中它初始化了一个DexPathList的实例,
+这个实例就是用反射的方法来加载一个类文件的，调用了findClass方法.
+
+在初始化DexPathList实例的时候，调用了makePathElements方法去将上一步传过来的已经通过classPath划分好的文件，加载进来，
+这个方法中判断了文件的类型，并加载到不同的文件文件对象中，
+
+如果是dex文件，就调用loadDexFile方法去加载，最后是调用到了native方法去加载一个文件的内容。
+
+
+
+最后makeDexClassLoader返回了一个Element数组，这个数组中保存着你要加载的所有的dex文件，如果我们要想加载多个dex文件，那么就可以修改数组的大小，
+实现mutlidex一样的原理。
+
+现在回过头来看mutlidex的使用它就是在application中传入了一个this,这就告诉了mutlidex这框架的所要加载的dex文件的上下文，这样内部就可以随便实现了。
+
+
+
